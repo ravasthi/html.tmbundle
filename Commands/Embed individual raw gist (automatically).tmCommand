@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require 'cgi'
+require 'open-uri'
+
+clip = STDIN.read
+if match = (%r'&lt;script src="https://gist.github.com/(\d+)\.js\?file=([^&amp;"]+)"&gt;&lt;/script&gt;'.match clip)
+  raw_uri = "https://gist.github.com/raw/#{match[1]}/#{match[2]}"
+  puts clip.chomp
+  puts &lt;&lt;EOS.chomp
+&lt;noscript&gt;
+  &lt;div class="gist-raw"&gt;
+    &lt;code&gt;
+      &lt;pre&gt;#{CGI.escapeHTML(open(raw_uri).read.chomp)}&lt;/pre&gt;
+    &lt;/code&gt;
+  &lt;/div&gt; &lt;!-- ./gist-raw --&gt;
+&lt;/noscript&gt;
+EOS
+end
+</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>~@g</string>
+	<key>name</key>
+	<string>Embed individual raw gist (automatically)</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
+	<key>scope</key>
+	<string>text.html, text.html.markdown</string>
+	<key>uuid</key>
+	<string>06470EE9-F3F0-4B95-A1FB-D2CC6A341907</string>
+</dict>
+</plist>

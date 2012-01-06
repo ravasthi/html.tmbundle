@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;fieldset${1: class="${2:name}"}&gt;
+	${4:$TM_SELECTED_TEXT}
+&lt;/fieldset&gt;${3: &lt;!-- /.${2:name} --&gt;}$0</string>
+	<key>name</key>
+	<string>Fieldset with class</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>fc</string>
+	<key>uuid</key>
+	<string>0CADB640-0D43-48AA-BC4D-8565BC3FDA4F</string>
+</dict>
+</plist>

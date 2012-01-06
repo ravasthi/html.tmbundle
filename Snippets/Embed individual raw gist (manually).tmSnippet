@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;noscript&gt;
+  &lt;div class="gist-raw"&gt;
+    &lt;code&gt;
+      &lt;pre&gt;
+$0
+      &lt;/pre&gt;
+    &lt;/code&gt;
+  &lt;/div&gt; &lt;!-- /.gist-raw --&gt;
+&lt;/noscript&gt;
+</string>
+	<key>name</key>
+	<string>Embed individual raw gist (manually)</string>
+	<key>scope</key>
+	<string>text.html, text.html.markdown</string>
+	<key>tabTrigger</key>
+	<string>gr</string>
+	<key>uuid</key>
+	<string>5D0F11F7-E6F5-4195-95F1-D76313FE061D</string>
+</dict>
+</plist>

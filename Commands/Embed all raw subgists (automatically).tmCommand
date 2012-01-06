@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require 'cgi'
+require 'json'
+require 'open-uri'
+
+gist_url = `pbpaste`
+if match = (%r'.*gist.*/(\d+).*'.match gist_url)
+  gist_id = match[1]
+  json_uri = "https://gist.github.com/#{gist_id}.json"
+  JSON.parse(open(json_uri).read)["files"].each_with_index do |f, i|
+    puts if i &gt; 0
+    puts "&lt;!-- GIST: #{gist_id}/#{f} --&gt;"
+    puts %Q'&lt;script src="https://gist.github.com/#{gist_id}.js?file=#{CGI.escape(f)}"&gt;&lt;/script&gt;'
+    raw_uri = "https://gist.github.com/raw/#{gist_id}/#{CGI.escape(f)}"
+    puts &lt;&lt;EOS.chomp
+&lt;noscript&gt;
+  &lt;div class="gist-raw"&gt;
+    &lt;code&gt;
+      &lt;pre&gt;#{CGI.escapeHTML(open(raw_uri).read.chomp)}&lt;/pre&gt;
+    &lt;/code&gt;
+  &lt;/div&gt; &lt;!-- ./gist-raw --&gt;
+&lt;/noscript&gt;
+EOS
+  end
+else
+  puts "Clipboard doesn't contain a valid gist URL."
+end
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>~@g</string>
+	<key>name</key>
+	<string>Embed all raw subgists (automatically)</string>
+	<key>outputLocation</key>
+	<string>afterInput</string>
+	<key>scope</key>
+	<string>text.html, text.html.markdown</string>
+	<key>uuid</key>
+	<string>38FA4965-ED47-4728-BDC7-D6FE2653C001</string>
+</dict>
+</plist>
