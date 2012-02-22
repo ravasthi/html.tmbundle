@@ -36,7 +36,7 @@ end
 	<key>outputFormat</key>
 	<string>text</string>
 	<key>outputLocation</key>
-	<string>replaceInput</string>
+	<string>afterInput</string>
 	<key>scope</key>
 	<string>text.html, text.html.markdown</string>
 	<key>uuid</key>

@@ -5,11 +5,9 @@
 	<key>content</key>
 	<string>&lt;noscript&gt;
   &lt;div class="gist-raw"&gt;
-    &lt;code&gt;
-      &lt;pre&gt;
+    &lt;pre&gt;
 $0
-      &lt;/pre&gt;
-    &lt;/code&gt;
+    &lt;/pre&gt;
   &lt;/div&gt; &lt;!-- /.gist-raw --&gt;
 &lt;/noscript&gt;
 </string>
