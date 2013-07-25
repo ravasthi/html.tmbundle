@@ -106,6 +106,8 @@ $tags = {
   "VAR"        =&gt; "../struct/text.html#edef-VAR"
 }
 
+require "#{ENV['TM_SUPPORT_PATH']}/lib/exit_codes.rb"
+
 def request_tag_name (default_tag = "body")
   res, tag = %x{ "$TM_SUPPORT_PATH/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog" \
     inputbox --float --title 'Documentation for Tag' \
@@ -115,7 +117,7 @@ def request_tag_name (default_tag = "body")
   }.split("\n")
   case res.to_i
     when 1 then $tags[tag.to_s.upcase] || "elements.html"
-    when 2 then abort "&lt;script&gt;window.close()&lt;/script&gt;"
+    when 2 then TextMate.exit_discard
     when 3 then "elements.html"
   end
 end
@@ -129,15 +131,25 @@ puts "&lt;meta http-equiv='Refresh' content='0;URL=#{url}'&gt;"
 </string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^h</string>
 	<key>name</key>
 	<string>Documentation for Tag</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>text.html, text.html entity.name.tag</string>
+	<key>semanticClass</key>
+	<string>lookup.define.html</string>
 	<key>uuid</key>
 	<string>637CEA2B-578C-429C-BB74-30E8D42BFA22</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
