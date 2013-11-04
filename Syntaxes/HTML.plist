@@ -16,10 +16,10 @@
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
 	<key>injections</key>
 	<dict>
-		<key>text.html.basic - comment.block</key>
+		<key>R:text.html - comment.block</key>
 		<dict>
 			<key>comment</key>
-			<string>Match this via injection so it doesnt match in other grammars.</string>
+			<string>Use R: to ensure this matches after any other injections.</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -395,7 +395,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:address|blockquote|dd|div|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|menu|pre)\b)</string>
+			<string>(&lt;/?)((?i:address|blockquote|dd|div|section|article|aside|header|footer|nav|menu|dl|dt|fieldset|form|frame|frameset|h1|h2|h3|h4|h5|h6|iframe|noframes|object|ol|p|ul|applet|center|dir|hr|pre)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
