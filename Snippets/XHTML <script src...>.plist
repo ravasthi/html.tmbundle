@@ -7,7 +7,7 @@
 	<key>name</key>
 	<string>Script With External Source</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html - B:meta.tag</string>
 	<key>tabTrigger</key>
 	<string>scriptsrc</string>
 	<key>uuid</key>

@@ -9,7 +9,7 @@
 	<key>name</key>
 	<string>Script</string>
 	<key>scope</key>
-	<string>text.html</string>
+	<string>text.html - B:meta.tag</string>
 	<key>tabTrigger</key>
 	<string>script</string>
 	<key>uuid</key>
