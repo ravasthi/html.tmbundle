@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby18  -wKU
+	<string>#!/usr/bin/env rvm-auto-ruby -wKU
 #
 # This script will expand the current word into: &lt;word&gt;&lt;/word&gt;
 # It will recognize HTML 4.0 tags that need no close tag.
@@ -49,13 +49,21 @@ print suffix
 	<string>word</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>^&lt;</string>
 	<key>name</key>
 	<string>Insert Open/Close Tag (With Current Word)</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>snippet</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>uuid</key>
 	<string>2ED44A32-C353-447F-BAE4-E3522DB6944D</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby18  -wKU
+	<string>#!/usr/bin/env rvm-auto-ruby  -wKU
 # 
 # Open Document in Running Browser(s)
 # 
@@ -52,13 +52,21 @@ else
 end</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Open Document in Running Browser(s)</string>
-	<key>output</key>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
 	<string>discard</string>
 	<key>scope</key>
 	<string>text.html</string>
 	<key>uuid</key>
 	<string>970EE6B4-A091-11D9-A5A2-000D93C8BE28</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
