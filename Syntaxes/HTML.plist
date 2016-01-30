@@ -11,6 +11,7 @@
 		<string>inc</string>
 		<string>tmpl</string>
 		<string>tpl</string>
+		<string>_</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>&lt;(?i:(!DOCTYPE\s*)?html)</string>
