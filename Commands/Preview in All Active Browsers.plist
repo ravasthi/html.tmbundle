@@ -6,12 +6,12 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env rvm-auto-ruby  -wKU
-# 
+#
 # Open Document in Running Browser(s)
-# 
+#
 # Now supports multiple running versions of a single browser along
 # with a range of new/old browsers. Bring back support for Firefox.
-# 
+#
 # Options: Set TM_PROJECT_SITEURL in your TM Project Window Info Button
 # in the following form: "http://example.com/"
 
