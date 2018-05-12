@@ -6,19 +6,19 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby  -wKU
-# 
+#
 # Open Document in Running Browser(s)
-# 
+#
 # Now supports multiple running versions of a single browser along
 # with a range of new/old browsers. Bring back support for Firefox.
-# 
+#
 # Options: Set TM_PROJECT_SITEURL in your TM Project Window Info Button
 # in the following form: "http://example.com/"
 
 require "#{ENV['TM_SUPPORT_PATH']}/lib/escape.rb"
 
 if ENV['TM_PROJECT_SITEURL']
-  url = "#{ENV['TM_PROJECT_SITEURL']}" + ENV['TM_FILEPATH'].sub(/^#{Regexp.escape(ENV['TM_PROJECT_DIRECTORY'])}\//, '') 
+  url = "#{ENV['TM_PROJECT_SITEURL']}" + ENV['TM_FILEPATH'].sub(/^#{Regexp.escape(ENV['TM_PROJECT_DIRECTORY'])}\//, '')
 else
   url = "file://#{ENV['TM_FILEPATH']}"
 end
