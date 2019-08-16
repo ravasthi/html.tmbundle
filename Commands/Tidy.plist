@@ -14,14 +14,22 @@
 require ENV['TM_SUPPORT_PATH'] + '/lib/ui.rb'
 require ENV['TM_SUPPORT_PATH'] + '/lib/exit_codes.rb'
 
-result = `"${TM_TIDY:-tidy}" -f /tmp/tm_tidy_errors -iq -utf8 \
-          -wrap 0 --tab-size $TM_TAB_SIZE --indent-spaces $TM_TAB_SIZE \
-		--indent yes \
-          ${TM_XHTML:+-asxhtml --output-xhtml yes} \
+if ENV['TM_SOFT_TABS'] == "NO"
+  tabs = '--indent-with-tabs yes'
+else
+  tabs = ''
+end
+
+
+result = `"${TM_TIDY:-$TM_BUNDLE_SUPPORT/bin/tidy}" --error-file /tmp/tm_tidy_errors -q \
+          --wrap 0 \
+          --indent yes #{tabs} \
+          --tab-size $TM_TAB_SIZE --indent-spaces $TM_TAB_SIZE \
+          --keep-tabs yes \
           ${TM_SELECTED_TEXT:+--show-body-only yes} \
           --enclose-text yes \
-          --doctype strict \
-		--wrap-php no \
+          --doctype html5 \
+          --wrap-php no \
           --tidy-mark no`
 status = $?.exitstatus
 
@@ -49,23 +57,8 @@ elsif status == 1 # Warnings - use output but also display notification with war
 
 end
 
-if ENV['TM_SOFT_TABS'] == "YES"
-  print result
-else
-  in_pre = false
-  result.each_line do |line|
-    unless in_pre
-      tab_size = ENV["TM_TAB_SIZE"].to_i
-      space, text = /( *)(.*)/m.match(line)[1..2]
-      line = "\t" * (space.length / tab_size).floor + " "  * (space.length % tab_size) + text
-    end
-    
-    print line
-  
-    in_pre = true  if line.include?("&lt;pre&gt;")
-    in_pre = false if line.include?("&lt;/pre&gt;")
-  end
-end</string>
+print result
+</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>inputFormat</key>

@@ -2,21 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>bundleUUID</key>
-	<string>4676FC6D-6227-11D9-BFB1-000D93589AF6</string>
 	<key>content</key>
-	<string>&lt;fieldset id="${1/[[:alpha:]]+|( )/(?1:_:\L$0)/g}"${2: class="${3:}"}&gt;
-	&lt;legend&gt;${1:$TM_SELECTED_TEXT}&lt;/legend&gt;
-	
+	<string>&lt;form action="${1:${TM_FILENAME/(.*?)\..*/$1_submit/}}" method="${2:get}" accept-charset="utf-8"&gt;
 	$0
-&lt;/fieldset&gt;</string>
+
+	&lt;p&gt;&lt;input type="submit" value="Continue &amp;rarr;"${TM_XHTML}&gt;&lt;/p&gt;
+&lt;/form&gt;</string>
 	<key>name</key>
-	<string>Fieldset</string>
+	<string>Form</string>
 	<key>scope</key>
 	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
-	<string>fieldset</string>
+	<string>form</string>
 	<key>uuid</key>
-	<string>9BD2BE01-A854-4D55-B584-725D04C075C0</string>
+	<string>232C2E8B-A08E-11D9-A5A2-000D93C8BE28</string>
 </dict>
 </plist>

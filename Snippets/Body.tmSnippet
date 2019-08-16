@@ -2,21 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>bundleUUID</key>
-	<string>4676FC6D-6227-11D9-BFB1-000D93589AF6</string>
 	<key>content</key>
-	<string>&lt;fieldset id="${1/[[:alpha:]]+|( )/(?1:_:\L$0)/g}"${2: class="${3:}"}&gt;
-	&lt;legend&gt;${1:$TM_SELECTED_TEXT}&lt;/legend&gt;
-	
+	<string>&lt;body id="${1:${TM_FILENAME/(.*)\..*/\L$1/}}"${2: onload="$3"}&gt;
 	$0
-&lt;/fieldset&gt;</string>
+&lt;/body&gt;</string>
 	<key>name</key>
-	<string>Fieldset</string>
+	<string>Body</string>
 	<key>scope</key>
 	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
-	<string>fieldset</string>
+	<string>body</string>
 	<key>uuid</key>
-	<string>9BD2BE01-A854-4D55-B584-725D04C075C0</string>
+	<string>4905D47B-A08B-11D9-A5A2-000D93C8BE28</string>
 </dict>
 </plist>

@@ -3,21 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Symbol List: ID</string>
+	<string>Character Class: Element Name</string>
 	<key>scope</key>
-	<string>meta.attribute.id.html &gt; string</string>
+	<string>text.html entity.name.tag.html</string>
 	<key>settings</key>
 	<dict>
-		<key>showInSymbolList</key>
-		<true/>
-		<key>symbolTransformation</key>
-		<string>
-		s/^"|"$//g
-		s/^'|'$//g
-		s/^/ID: /
-	</string>
+		<key>characterClass</key>
+		<string>element</string>
 	</dict>
 	<key>uuid</key>
-	<string>E7C5859E-122D-4382-84BE-5AB584DC2409</string>
+	<string>BB37555E-C904-4EFB-B26C-91088DF4D026</string>
 </dict>
 </plist>

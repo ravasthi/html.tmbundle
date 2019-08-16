@@ -2,17 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>bundleUUID</key>
-	<string>4676FC6D-6227-11D9-BFB1-000D93589AF6</string>
 	<key>content</key>
-	<string>&lt;option${1: value="${2:option}"}&gt;${3:$2}&lt;/option&gt;</string>
+	<string>&lt;dl&gt;
+	&lt;dt&gt;{1:first item}&lt;/dt&gt;
+	&lt;dd&gt;
+		{2:description}
+	&lt;/dd&gt;$0
+&lt;/dl&gt;</string>
 	<key>name</key>
-	<string>Option</string>
+	<string>Description List</string>
 	<key>scope</key>
 	<string>text.html - B:meta.tag - B:text.html meta.embedded</string>
 	<key>tabTrigger</key>
-	<string>opt</string>
+	<string>dl</string>
 	<key>uuid</key>
-	<string>5820372E-A093-4F38-B25C-B0CCC50A0FC4</string>
+	<string>C6007DCF-3603-459A-B723-5A8582E77E89</string>
 </dict>
 </plist>
